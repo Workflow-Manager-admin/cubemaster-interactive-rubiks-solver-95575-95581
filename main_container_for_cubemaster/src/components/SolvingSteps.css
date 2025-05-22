@@ -3,12 +3,17 @@
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
 }
 
 .solving-steps-container h2 {
   color: var(--text-color);
   margin-top: 0;
   margin-bottom: 16px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
 }
 
 .steps-navigation {
@@ -16,6 +21,9 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 10px;
 }
 
 .step-btn {
@@ -25,12 +33,22 @@
   border-radius: 4px;
   padding: 8px 16px;
   font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
 }
 
 .step-btn:hover:not(:disabled) {
   background-color: #FF8B4D;
+  transform: translateY(-2px);
+}
+
+.step-btn:active:not(:disabled) {
+  transform: translateY(1px);
 }
 
 .step-btn:disabled {
@@ -41,18 +59,40 @@
 .step-indicator {
   color: var(--text-secondary);
   font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+  min-width: 60px;
+  text-align: center;
 }
 
 .step-content {
-  padding: 16px;
+  padding: 20px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 6px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .step-content h3 {
   color: var(--kavia-orange);
   margin-top: 0;
   margin-bottom: 12px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.step-content h3::before {
+  content: "•";
+  color: var(--kavia-orange);
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.step-content p {
+  line-height: 1.6;
+  color: var(--text-color);
 }
 
 .step-image-placeholder {
@@ -64,4 +104,32 @@
   justify-content: center;
   margin-top: 16px;
   color: var(--text-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.step-image-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--kavia-orange);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .steps-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .step-btn {
+    width: 100%;
+  }
 }
