@@ -1,0 +1,67 @@
+.solving-steps-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.solving-steps-container h2 {
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.steps-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step-btn {
+  background-color: var(--kavia-orange);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.step-btn:hover:not(:disabled) {
+  background-color: #FF8B4D;
+}
+
+.step-btn:disabled {
+  background-color: rgba(232, 122, 65, 0.3);
+  cursor: not-allowed;
+}
+
+.step-indicator {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.step-content {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.step-content h3 {
+  color: var(--kavia-orange);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.step-image-placeholder {
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  color: var(--text-secondary);
+}
