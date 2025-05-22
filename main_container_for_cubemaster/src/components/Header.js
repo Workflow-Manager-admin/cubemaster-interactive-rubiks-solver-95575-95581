@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.css';
 
 /**
  * Header component for the CubeMaster application
