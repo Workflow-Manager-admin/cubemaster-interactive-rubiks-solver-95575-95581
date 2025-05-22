@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useCube } from '../contexts/CubeContext';
 import Header from './Header';
 import CubeDisplay from './CubeDisplay';
 import SolvingSteps from './SolvingSteps';
@@ -11,6 +12,14 @@ import './MainContainer.css';
  * Arranges all subcomponents in a cohesive layout
  */
 const MainContainer = () => {
+  const { resetCube } = useCube();
+  
+  // Initialize cube on component mount
+  useEffect(() => {
+    resetCube();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="main-container">
       <Header />
@@ -29,10 +38,12 @@ const MainContainer = () => {
           </div>
           
           <div className="solving-steps-area">
+            <h2 className="section-title">Solution Guide</h2>
             <SolvingSteps />
           </div>
           
           <div className="tutorial-area">
+            <h2 className="section-title">Learning Resources</h2>
             <TutorialSection />
           </div>
         </div>
