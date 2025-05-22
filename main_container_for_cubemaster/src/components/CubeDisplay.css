@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cube-placeholder {
@@ -17,15 +18,30 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cube-placeholder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.3));
+  pointer-events: none;
 }
 
 .cube-message {
   text-align: center;
+  z-index: 2;
 }
 
 .cube-message h3 {
   color: var(--kavia-orange);
   margin-bottom: 8px;
+  font-size: 1.5rem;
 }
 
 .cube-message p {
@@ -34,8 +50,11 @@
 
 .cube-controls {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 16px;
+  width: 100%;
 }
 
 .cube-btn {
@@ -46,9 +65,29 @@
   padding: 8px 16px;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 80px;
+  max-width: 120px;
+  text-align: center;
 }
 
 .cube-btn:hover {
   background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--kavia-orange);
+  transform: translateY(-2px);
+}
+
+.cube-btn:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 600px) {
+  .cube-placeholder {
+    height: 250px;
+  }
+  
+  .cube-controls {
+    flex-direction: row;
+  }
 }
