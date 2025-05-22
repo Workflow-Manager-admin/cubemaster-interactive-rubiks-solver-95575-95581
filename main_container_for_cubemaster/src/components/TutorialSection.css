@@ -1,0 +1,79 @@
+.tutorial-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.tutorial-container h2 {
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.tutorials-list {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.tutorial-item {
+  flex: 0 0 200px;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.tutorial-item:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.tutorial-item.selected {
+  border-color: var(--kavia-orange);
+  background-color: rgba(232, 122, 65, 0.1);
+}
+
+.tutorial-item h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.tutorial-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.difficulty {
+  padding: 2px 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.tutorial-content {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.tutorial-content h3 {
+  color: var(--kavia-orange);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.tutorial-placeholder {
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  color: var(--text-secondary);
+}
